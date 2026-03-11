@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <title>
+            GST Calculator
+        </title>
+        <style>
+            body
+            {
+               background-color: rgb(177, 94, 147); 
+            }
+            .box
+            {
+               width: 700px;
+               height: 400px;
+               background-color: rgb(0, 174, 255);
+               border:dotted 3px black;
+               padding: 8px;
+               margin-left: 270px;
+               margin-top: 110px;
+               position:fixed;
+               top: 100px;
+               left: 270px; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <h1 align="center" textcolor="orange">GST BILL CALCULATOR</h1>
+            <h3 align="center">KAVIDHARSHINI RAMESH (25012397) </h3>
+            <h2 align="center">CALCULATION</h2>
+            <form method="POST" align="center">
+                {% csrf_token %}
+                <label>PRICE:</label>
+                <input type="text" name="price" value="{{ price }}">
+                <br>
+                <br>
+                <label>GST (%):</label>
+                <input type="text" name="gst" value="{{ gst }}">
+                <br>
+                <br>
+                <input type="submit" value="calculate">
+                <br>
+                <br>
+                <label>TOTAL BILL</label>
+                <input type="text" name="total_bill" value="{{ total_bill }}" readonly>
+            </form>
+        </div>
+    </body>
+</html>
